@@ -38,3 +38,7 @@ build/
 
 # Temp files
 tempCodeRunnerFile.python
+
+*.pt
+*.onnx
+*.onnx.data
