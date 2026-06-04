@@ -108,7 +108,7 @@ def check_image_quality(image_bytes: bytes) -> Tuple[bool, str]:
 
         # Check blurriness — relaxed from 50 to 20
         laplacian_var = cv2.Laplacian(gray, cv2.CV_64F).var()
-        if laplacian_var < 20:
+        if laplacian_var < 5:
             return False, "Image too blurry"
 
         return True, "OK"
