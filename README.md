@@ -11,21 +11,13 @@ The goal of the project was to build an AI-powered web application that assists 
 ---
 ### My Role
 
-I was responsible for the AI and backend development of the project.
+I led the AI and backend development of AcneAI.
 
-### AI Development
+On the AI side, I built the complete machine learning pipeline by preparing the dataset, training and evaluating three EfficientNet-B3 models for acne detection, acne type classification, and severity assessment, and optimizing them for deployment using ONNX Runtime.
 
-I designed, trained, evaluated, and deployed the machine learning pipeline used by AcneAI. My work included:
+On the backend, I developed the FastAPI application, integrated the trained models into an asynchronous inference pipeline using Celery and Redis, designed the PostgreSQL database with Supabase, implemented authentication and core APIs, and integrated the DermaAI chatbot and OCR-based product ingredient scanner.
 
-- Collecting and preparing the training dataset
-- Image preprocessing and augmentation
-- Training three EfficientNet-B3 models for:
-  - Acne Detection
-  - Acne Type Classification
-  - Acne Severity Classification
-- Model evaluation and performance optimization
-- Converting trained PyTorch models to ONNX for faster inference
-- Integrating ONNX Runtime into the production backend
+This work resulted in a scalable cloud-based application capable of performing end-to-end acne analysis.
 
 The final models achieved:
 
@@ -34,24 +26,6 @@ The final models achieved:
 | Acne Detection | **94%** |
 | Acne Type Classification | **89%** |
 | Severity Classification | **86%** |
-
-### Backend Development
-
-I designed and implemented the backend using FastAPI and integrated all AI services into a scalable web application.
-
-Some of the major components I developed include:
-
-- REST APIs using FastAPI
-- JWT-based authentication and authorization
-- Image upload and preprocessing pipeline
-- Asynchronous ML inference using Celery and Redis
-- PostgreSQL database design with Supabase
-- Analysis history and progress tracking APIs
-- Treatment recommendation engine
-- Product ingredient scanner using Tesseract OCR and Groq LLM
-- DermaAI chatbot backend and conversation management
-- Cloudinary image storage
-- Logging, API optimization, and production configuration
 
 One of the primary challenges was deploying deep learning models efficiently on CPU-only cloud infrastructure. To address this, I converted the trained models to ONNX, integrated asynchronous inference using Celery workers, and designed a background job architecture that allows users to continue using the application while image analysis runs in parallel. This approach reduced response times and improved the overall user experience.
 
